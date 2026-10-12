@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Argueta | Crecimiento Infinito - Crecimiento Digital & Estrategia</title>
+    <title>David Argueta | Infinite Growth - Crecimiento Digital & Estrategia</title>
     <!-- CDN CSS de Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter y Plus Jakarta Sans -->
+    <!-- Google Fonts: Montserrat (Tipografía del Logo) e Inter (Lectura) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <!-- CDN de Iconos de Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -18,64 +18,122 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                        logo: ['Montserrat', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
                     },
                     colors: {
                         dark: '#0B0F19',
                         card: '#111827',
                         gold: {
                             400: '#FBBF24',
-                            500: '#F59E0B',
-                            600: '#D97706',
+                            500: '#BFA071',
+                            600: '#8A6D3B',
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Degradado metálico Oro Viejo estilo Chip */
+        .gold-metal-text {
+            background: linear-gradient(135deg, #DFBA73 0%, #C5A059 40%, #9E7D3B 70%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-chip-border {
+            background: linear-gradient(135deg, rgba(223, 186, 115, 0.4) 0%, rgba(158, 125, 59, 0.2) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: inset 0 0 8px rgba(212, 175, 55, 0.15), 0 2px 6px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body class="bg-dark text-gray-100 font-sans antialiased selection:bg-gold-500 selection:text-dark">
 
     <!-- HEADER / NAVEGACIÓN -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-2xl font-extrabold font-heading tracking-tight flex items-center gap-2">
-                <span class="text-gold-500">Infinite</span> Growth
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-4">
+            
+            <!-- BRAND LOGO TIPO CHIP METALIZADO ORO VIEJO + SÍMBOLO COHETE/INFINITO -->
+            <a href="#" class="flex items-center gap-2.5 group shrink-0">
+                
+                <!-- EMBLEMA / CHIP EN ORO VIEJO -->
+                <div class="w-8 h-8 md:w-9 md:h-9 rounded-lg gold-chip-border flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
+                    <!-- Icono SVG Cohete/Infinito en Oro Viejo -->
+                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-md">
+                        <defs>
+                            <linearGradient id="oldGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#E5C178" />
+                                <stop offset="50%" stop-color="#B38F46" />
+                                <stop offset="100%" stop-color="#7A5C23" />
+                            </linearGradient>
+                            <linearGradient id="nightBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2C3E50" />
+                                <stop offset="100%" stop-color="#1A252F" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Bucle de Infinito Metalizado -->
+                        <path d="M 30,65 C 15,65 15,35 30,35 C 45,35 55,65 70,65 C 85,65 85,35 70,35 C 60,35 50,50 42,60" 
+                              fill="none" stroke="url(#nightBlue)" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M 30,65 C 15,65 15,35 30,35 C 45,35 55,65 70,65 C 85,65 85,35 70,35" 
+                              fill="none" stroke="url(#oldGold)" stroke-width="5" stroke-linecap="round"/>
+                        <!-- Estela y Cohete -->
+                        <path d="M 50,55 C 50,30 60,20 70,15" fill="none" stroke="url(#oldGold)" stroke-width="4"/>
+                        <polygon points="70,10 77,22 67,20" fill="url(#oldGold)"/>
+                    </svg>
+                </div>
+
+                <!-- TEXTO DEL LOGO CON SUBTEXTO "DAVID ARGUETA" EN BLANCO -->
+                <div class="flex flex-col">
+                    <span class="text-base md:text-lg font-black font-logo tracking-wider uppercase leading-none">
+                        <span class="text-white">INFINITE</span><span class="gold-metal-text">GROWTH</span>
+                    </span>
+                    <span class="text-[8px] md:text-[9px] font-bold font-logo tracking-[0.2em] text-white uppercase mt-0.5">
+                        DAVID ARGUETA
+                    </span>
+                </div>
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a>
-                <a href="#sobre-mi" class="hover:text-gold-400 transition-colors">Sobre Mí</a>
-                <a href="#servicios" class="hover:text-gold-400 transition-colors">Servicios</a>
-                <a href="#proyectos" class="hover:text-gold-400 transition-colors">Casos de Estudio</a>
-                <a href="#metodologia" class="hover:text-gold-400 transition-colors">Metodología</a>
+            <!-- MENÚ ORDENADO Y COMPACTO -->
+            <nav class="hidden lg:flex items-center gap-4 text-xs xl:text-sm font-medium text-gray-300">
+                <a href="#inicio" class="hover:text-gold-400 transition-colors whitespace-nowrap">Inicio</a>
+                <a href="#sobre-mi" class="hover:text-gold-400 transition-colors whitespace-nowrap">Sobre Mí</a>
+                <a href="#servicios" class="hover:text-gold-400 transition-colors whitespace-nowrap">Servicios</a>
+                <a href="#contenido" class="hover:text-gold-400 transition-colors whitespace-nowrap">Contenido & Reels</a>
+                <a href="#automatizacion" class="hover:text-gold-400 transition-colors whitespace-nowrap">Automatización & IA</a>
+                <a href="#proyectos" class="hover:text-gold-400 transition-colors whitespace-nowrap">Casos</a>
+                <a href="#metodologia" class="hover:text-gold-400 transition-colors whitespace-nowrap">Metodología</a>
+                <a href="#redes-sociales" class="hover:text-gold-400 transition-colors whitespace-nowrap">Redes</a>
             </nav>
 
-            <div class="hidden md:block">
-                <a href="#contacto" class="bg-gold-500 hover:bg-gold-600 text-dark font-bold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-gold-500/10">
-                    Agendar Consulta
+            <div class="hidden md:flex shrink-0">
+                <a href="https://wa.me/50379213564" target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-4 py-2 rounded-lg text-xs md:text-sm transition-all shadow-md shadow-emerald-900/20 flex items-center gap-1.5">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
                 </a>
             </div>
 
             <!-- Botón Menú Móvil -->
-            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white">
-                <i data-lucide="menu" class="w-7 h-7"></i>
+            <button id="menu-btn" class="lg:hidden text-gray-300 hover:text-white p-1">
+                <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
 
         <!-- Menú Móvil Desplegable -->
-        <div id="mobile-menu" class="hidden md:hidden bg-card border-b border-gray-800 px-6 py-4 space-y-3">
-            <a href="#inicio" class="block text-gray-300 hover:text-gold-400 py-1">Inicio</a>
-            <a href="#sobre-mi" class="block text-gray-300 hover:text-gold-400 py-1">Sobre Mí</a>
-            <a href="#servicios" class="block text-gray-300 hover:text-gold-400 py-1">Servicios</a>
-            <a href="#proyectos" class="block text-gray-300 hover:text-gold-400 py-1">Casos de Estudio</a>
-            <a href="#metodologia" class="block text-gray-300 hover:text-gold-400 py-1">Metodología</a>
-            <a href="#contacto" class="block text-center bg-gold-500 text-dark font-bold py-2.5 rounded-xl mt-2">Agendar Consulta</a>
+        <div id="mobile-menu" class="hidden lg:hidden bg-card border-b border-gray-800 px-6 py-4 space-y-3">
+            <a href="#inicio" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Inicio</a>
+            <a href="#sobre-mi" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Sobre Mí</a>
+            <a href="#servicios" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Servicios</a>
+            <a href="#contenido" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Contenido & Reels</a>
+            <a href="#automatizacion" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Automatización & IA</a>
+            <a href="#proyectos" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Casos de Estudio</a>
+            <a href="#metodologia" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Metodología</a>
+            <a href="#redes-sociales" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Redes Sociales</a>
+            <a href="https://wa.me/50379213564" target="_blank" class="block text-center bg-[#25D366] text-white font-bold py-2.5 rounded-xl mt-2 text-sm">Contactar por WhatsApp</a>
         </div>
     </header>
 
     <!-- 1. ENCABEZADO / HERO SECTION -->
-    <section id="inicio" class="pt-32 pb-20 md:pt-44 md:pb-32 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section id="inicio" class="pt-28 pb-20 md:pt-40 md:pb-32 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-semibold tracking-wide uppercase">
                 <i data-lucide="trending-up" class="w-4 h-4"></i> Estrategia & Crecimiento Digital
@@ -87,11 +145,11 @@
                 Soy <strong class="text-white">David Argueta</strong>, fundador de <span class="text-gold-400 font-semibold">Infinite Growth</span>. Ayudo a empresas y marcas a escalar sus ventas, optimizar su captación digital y consolidar su posicionamiento en el mercado.
             </p>
             <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
-                <a href="#proyectos" class="w-full sm:w-auto text-center bg-gold-500 hover:bg-gold-600 text-dark font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-gold-500/20 flex items-center justify-center gap-2">
-                    Ver Casos de Estudio <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                <a href="https://wa.me/50379213564" target="_blank" class="w-full sm:w-auto text-center bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-emerald-900/30 flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> Contactar por WhatsApp
                 </a>
-                <a href="#contacto" class="w-full sm:w-auto text-center border border-gray-700 hover:border-gold-500/50 text-gray-200 font-semibold px-8 py-4 rounded-xl transition-all">
-                    Agendar Consulta
+                <a href="mailto:arrgu3tta@gmail.com" class="w-full sm:w-auto text-center border border-gray-700 hover:border-gold-500/50 text-gray-200 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i> Enviar Correo
                 </a>
             </div>
         </div>
@@ -100,11 +158,6 @@
         <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-amber-600 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
             <div class="relative bg-card rounded-2xl overflow-hidden border border-gray-800 shadow-2xl aspect-[4/3]">
-                <!-- 
-                  <!-- URL DEL GIF PRINCIPAL -->
-                  <!-- Área: Pantalla Principal (Hero Banner) -->
-                  <!-- Medida sugerida: 800x600 px (Formato GIF animado o MP4) -->
-                -->
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" 
                      alt="Estrategia y Crecimiento Digital" 
                      class="w-full h-full object-cover transform hover:scale-105 transition duration-700">
@@ -143,11 +196,6 @@
 
             <!-- IMAGEN SECCIÓN SOBRE MÍ -->
             <div class="relative">
-                <!-- 
-                  <!-- URL DE IMAGEN SOBRE MÍ -->
-                  <!-- Área: Sección Biografía / Perfil Profesional -->
-                  <!-- Medida sugerida: 600x700 px (Ajuste automático object-cover) -->
-                -->
                 <div class="rounded-2xl overflow-hidden border border-gray-800 shadow-2xl aspect-[4/5]">
                     <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" 
                          alt="David Argueta - Consultor" 
@@ -169,11 +217,6 @@
             <!-- Servicio 1 -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-48 overflow-hidden relative">
-                    <!-- 
-                      <!-- URL DE IMAGEN SERVICIO 1 -->
-                      <!-- Área: Tarjeta de Servicio 1 (Marketing & Publicidad) -->
-                      <!-- Medida sugerida: 600x400 px -->
-                    -->
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Estrategia y Marketing" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="target" class="w-6 h-6"></i>
@@ -191,11 +234,6 @@
             <!-- Servicio 2 -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-48 overflow-hidden relative">
-                    <!-- 
-                      <!-- URL DE IMAGEN SERVICIO 2 -->
-                      <!-- Área: Tarjeta de Servicio 2 (Automatización & CRM) -->
-                      <!-- Medida sugerida: 600x400 px -->
-                    -->
                     <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Automatización y CRM" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="cpu" class="w-6 h-6"></i>
@@ -213,11 +251,6 @@
             <!-- Servicio 3 -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-48 overflow-hidden relative">
-                    <!-- 
-                      <!-- URL DE IMAGEN SERVICIO 3 -->
-                      <!-- Área: Tarjeta de Servicio 3 (Identidad de Marca) -->
-                      <!-- Medida sugerida: 600x400 px -->
-                    -->
                     <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=600&q=80" alt="Identidad de Marca" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="pen-tool" class="w-6 h-6"></i>
@@ -234,7 +267,184 @@
         </div>
     </section>
 
-    <!-- 4. CASOS DE ESTUDIO -->
+    <!-- 4. APARTADO DE CREACIÓN DE CONTENIDO (HISTORIAS & REELS) -->
+    <section id="contenido" class="py-24 bg-card/50 border-y border-gray-800/60 px-6">
+        <div class="max-w-7xl mx-auto space-y-16">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Producción Audiovisual</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading">Creación de Contenido de Alto Impacto</h2>
+                <p class="text-gray-400">Formatos optimizados para retener la atención, generar interacción y convertir audiencia en clientes.</p>
+            </div>
+
+            <!-- SUB-APARTADO 1: CREACIÓN DE HISTORIAS -->
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 rounded-lg bg-gold-500/10 text-gold-400">
+                        <i data-lucide="layout-grid" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-heading">Creación de Historias (Stories 9:16)</h3>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16]">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&q=80" alt="Historia Interactiva" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex flex-col justify-end p-4">
+                            <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Interacción & Oferta</span>
+                            <p class="text-xs text-gray-300 mt-1">Secuencias narrativas con stickers y llamadas a la acción directas.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16]">
+                        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=600&q=80" alt="Historia Promocional" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex flex-col justify-end p-4">
+                            <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Promoción Flash</span>
+                            <p class="text-xs text-gray-300 mt-1">Diseño dinámico para campañas diarias e imperdibles.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16]">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80" alt="Historia Corporativa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex flex-col justify-end p-4">
+                            <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Detrás de Escena</span>
+                            <p class="text-xs text-gray-300 mt-1">Humanización de marca y procesos de servicio.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16]">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Historia de Resultados" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex flex-col justify-end p-4">
+                            <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Testimonios & Casos</span>
+                            <p class="text-xs text-gray-300 mt-1">Prueba social enfocada en generar confianza inmediata.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUB-APARTADO 2: CREACIÓN DE REELS & VIDEOS CORTOS -->
+            <div class="space-y-6 pt-6">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 rounded-lg bg-gold-500/10 text-gold-400">
+                        <i data-lucide="video" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold font-heading">Creación de Reels & Contenido Dinámico</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Reel Educativo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
+                        
+                        <div class="relative z-10 flex justify-between items-center">
+                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Reel Educativo</span>
+                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
+                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 space-y-2">
+                            <h4 class="font-bold text-lg text-white font-heading">Estrategia de Gancho Corto</h4>
+                            <p class="text-xs text-gray-300">Guiones enfocados en retener los primeros 3 segundos y elevar la tasa de reproducción.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
+                        <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80" alt="Reel Comercial" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
+                        
+                        <div class="relative z-10 flex justify-between items-center">
+                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Reel de Venta</span>
+                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
+                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 space-y-2">
+                            <h4 class="font-bold text-lg text-white font-heading">Presentación de Oferta</h4>
+                            <p class="text-xs text-gray-300">Demostración directa de beneficios, llamado a la acción claro y edición ágil.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Reel de Tendencia" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
+                        
+                        <div class="relative z-10 flex justify-between items-center">
+                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Tendencias & Virales</span>
+                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
+                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 space-y-2">
+                            <h4 class="font-bold text-lg text-white font-heading">Audio & Formato Viral</h4>
+                            <p class="text-xs text-gray-300">Adaptación de contenidos en tendencia aplicados al nicho específico de tu marca.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. AUTOMATIZACIÓN Y PROCESOS CON IA -->
+    <section id="automatizacion" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Eficiencia & Escalabilidad</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-heading">Automatización y Procesos con Inteligencia Artificial</h2>
+            <p class="text-gray-400">Optimizamos la operación interna de tu negocio reemplazando tareas manuales por flujos inteligentes y sistemas de medición precisos.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Creación de Procesos con IA" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
+                        <i data-lucide="bot" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold font-heading mb-2 text-white">Creación de Procesos Automatizados</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Diseño de diagramas de flujo operativos e integración de prompts e IA para automatizar la atención a clientes, gestión de prospectos y asignación de tareas.</p>
+                    </div>
+                    <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">Estructura & Flujos Continuos</span>
+                </div>
+            </div>
+
+            <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Planillas de Pago y Finanzas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
+                        <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold font-heading mb-2 text-white">Gestión de Planillas de Pago</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Automatización de nóminas, cálculo de comisiones por ventas y consolidación de reportes financieros mediante hojas de cálculo conectadas con algoritmos de IA.</p>
+                    </div>
+                    <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">Cero errores de cálculo</span>
+                </div>
+            </div>
+
+            <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Medición de KPIs de Ventas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold font-heading mb-2 text-white">Medición de Indicadores & KPIs</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Tableros dinámicos en tiempo real para rastrear costo por adquisición (CAC), retorno de inversión (ROAS), rendimiento del equipo de ventas y métricas clave.</p>
+                    </div>
+                    <span class="text-xs text-gold-400 font-semibold flex items-center gap-1">Decisiones basadas en datos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CASOS DE ESTUDIO -->
     <section id="proyectos" class="py-20 bg-card/50 border-y border-gray-800/60 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -246,14 +456,8 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Proyecto 1 -->
                 <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 flex flex-col group">
                     <div class="h-64 overflow-hidden relative">
-                        <!-- 
-                          <!-- URL DE IMAGEN CASO DE ESTUDIO 1 -->
-                          <!-- Área: Portada del Proyecto 1 -->
-                          <!-- Medida sugerida: 800x500 px -->
-                        -->
                         <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80" alt="Caso de Estudio 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute top-4 right-4 bg-gold-500 text-dark text-xs font-bold px-3 py-1.5 rounded-lg">
                             +40% Citas
@@ -274,14 +478,8 @@
                     </div>
                 </div>
 
-                <!-- Proyecto 2 -->
                 <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 flex flex-col group">
                     <div class="h-64 overflow-hidden relative">
-                        <!-- 
-                          <!-- URL DE IMAGEN CASO DE ESTUDIO 2 -->
-                          <!-- Área: Portada del Proyecto 2 -->
-                          <!-- Medida sugerida: 800x500 px -->
-                        -->
                         <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Caso de Estudio 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute top-4 right-4 bg-gold-500 text-dark text-xs font-bold px-3 py-1.5 rounded-lg">
                             Branding & Ventas
@@ -305,34 +503,81 @@
         </div>
     </section>
 
-    <!-- 5. METODOLOGÍA -->
-    <section id="metodologia" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
-            <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Paso a paso</span>
-            <h2 class="text-3xl md:text-4xl font-bold font-heading">Mi Metodología de Trabajo</h2>
-            <p class="text-gray-400">Un proceso claro y transparente diseñado para mitigar riesgos y maximizar el retorno.</p>
-        </div>
+    <!-- 7. METODOLOGÍA -->
+    <section id="metodologia" class="py-24 bg-card/30 border-y border-gray-800 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
+                <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Paso a paso</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading">Mi Metodología de Trabajo</h2>
+                <p class="text-gray-400">Un proceso claro y transparente diseñado para mitigar riesgos y maximizar el retorno.</p>
+            </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-card p-8 rounded-2xl border border-gray-800 relative">
-                <span class="text-4xl font-extrabold text-gold-500/20 font-heading absolute top-6 right-6">01</span>
-                <h3 class="text-xl font-bold font-heading mb-3 text-white">Diagnóstico & Análisis</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Evaluamos a fondo la situación actual de tu negocio, tu audiencia, tus canales actuales y los objetivos comerciales a cumplir.</p>
-            </div>
-            <div class="bg-card p-8 rounded-2xl border border-gray-800 relative">
-                <span class="text-4xl font-extrabold text-gold-500/20 font-heading absolute top-6 right-6">02</span>
-                <h3 class="text-xl font-bold font-heading mb-3 text-white">Estrategia Personalizada</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Diseñamos el plan de acción a la medida, estructurando los mensajes ganadores, las ofertas y los canales de captación óptimos.</p>
-            </div>
-            <div class="bg-card p-8 rounded-2xl border border-gray-800 relative">
-                <span class="text-4xl font-extrabold text-gold-500/20 font-heading absolute top-6 right-6">03</span>
-                <h3 class="text-xl font-bold font-heading mb-3 text-white">Ejecución & Optimización</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Lanzamos los sistemas, configuramos campañas y monitoreamos métricas en tiempo real para asegurar un rendimiento ascendente.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-card p-8 rounded-2xl border border-gray-800 relative">
+                    <span class="text-4xl font-extrabold text-gold-500/20 font-heading absolute top-6 right-6">01</span>
+                    <h3 class="text-xl font-bold font-heading mb-3 text-white">Diagnóstico & Análisis</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Evaluamos a fondo la situación actual de tu negocio, tu audiencia, tus canales actuales y los objetivos comerciales a cumplir.</p>
+                </div>
+                <div class="bg-card p-8 rounded-2xl border border-gray-800 relative">
+                    <span class="text-4xl font-extrabold text-gold-500/20 font-heading absolute top-6 right-6">02</span>
+                    <h3 class="text-xl font-bold font-heading mb-3 text-white">Estrategia Personalizada</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Diseñamos el plan de acción a la medida, estructurando los mensajes ganadores, las ofertas y los canales de captación óptimos.</p>
+                </div>
+                <div class="bg-card p-8 rounded-2xl border border-gray-800 relative">
+                    <span class="text-4xl font-extrabold text-gold-500/20 font-heading absolute top-6 right-6">03</span>
+                    <h3 class="text-xl font-bold font-heading mb-3 text-white">Ejecución & Optimización</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Lanzamos los sistemas, configuramos campañas y monitoreamos métricas en tiempo real para asegurar un rendimiento ascendente.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. CONTACTO / FOOTER -->
+    <!-- 8. REDES SOCIALES -->
+    <section id="redes-sociales" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="text-center space-y-12">
+            <div class="space-y-4">
+                <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Comunidad & Presencia</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading">Conecta en Mis Redes Sociales</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Sigue mis canales oficiales para acceder a estrategias diarias, análisis de casos y contenido exclusivo.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <a href="https://instagram.com" target="_blank" class="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all group flex flex-col items-center gap-3">
+                    <div class="p-3 rounded-xl bg-pink-500/10 text-pink-400 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="instagram" class="w-8 h-8"></i>
+                    </div>
+                    <span class="font-bold text-white">Instagram</span>
+                    <span class="text-xs text-gray-400">@infinitegrowth</span>
+                </a>
+
+                <a href="https://facebook.com" target="_blank" class="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all group flex flex-col items-center gap-3">
+                    <div class="p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="facebook" class="w-8 h-8"></i>
+                    </div>
+                    <span class="font-bold text-white">Facebook</span>
+                    <span class="text-xs text-gray-400">/infinitegrowth</span>
+                </a>
+
+                <a href="https://linkedin.com" target="_blank" class="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all group flex flex-col items-center gap-3">
+                    <div class="p-3 rounded-xl bg-sky-500/10 text-sky-400 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="linkedin" class="w-8 h-8"></i>
+                    </div>
+                    <span class="font-bold text-white">LinkedIn</span>
+                    <span class="text-xs text-gray-400">David Argueta</span>
+                </a>
+
+                <a href="https://tiktok.com" target="_blank" class="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all group flex flex-col items-center gap-3">
+                    <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="share-2" class="w-8 h-8"></i>
+                    </div>
+                    <span class="font-bold text-white">TikTok</span>
+                    <span class="text-xs text-gray-400">@infinitegrowth</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CONTACTO / FOOTER -->
     <section id="contacto" class="py-24 bg-card border-t border-gray-800 px-6">
         <div class="max-w-4xl mx-auto text-center space-y-8">
             <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Hablemos de negocios</span>
@@ -340,17 +585,17 @@
             <p class="text-gray-400 max-w-xl mx-auto">Conversemos sobre tus metas actuales y cómo podemos diseñar una estrategia orientada a resultados rentables.</p>
             
             <div class="flex flex-wrap justify-center gap-4 pt-4">
-                <a href="mailto:contacto@infinitegrowth.com" class="bg-gold-500 hover:bg-gold-600 text-dark font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-2">
-                    <i data-lucide="mail" class="w-5 h-5"></i> Enviar Correo
+                <a href="https://wa.me/50379213564" target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> Contactar por WhatsApp
                 </a>
-                <a href="https://wa.me/" target="_blank" class="border border-gray-700 hover:border-gold-500 text-gray-200 font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2">
-                    <i data-lucide="message-square" class="w-5 h-5"></i> Contactar por WhatsApp
+                <a href="mailto:arrgu3tta@gmail.com" class="border border-gray-700 hover:border-gold-500 text-gray-200 font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i> Enviar Correo a David
                 </a>
             </div>
 
             <div class="pt-12 border-t border-gray-800/80 text-sm text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p>© 2026 David Argueta / Infinite Growth. Todos los derechos reservados.</p>
-                <p class="font-mono text-gold-400">Diseñado sin costos y alojado en GitHub Pages.</p>
+                <p class="font-mono text-gold-400">Alojado en GitHub Pages.</p>
             </div>
         </div>
     </section>
