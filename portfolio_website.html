@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Argueta | Infinite Growth - Crecimiento Digital & Estrategia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F19',
+                            card: '#111827',
+                            border: '#1F2937',
+                            gold: '#D4AF37',
+                            goldHover: '#C5A028',
+                            blue: '#3B82F6',
+                            light: '#F9FAFB'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0F19;
+            color: #F9FAFB;
+            font-family: 'Inter', sans-serif;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFF 30%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .border-gold-glow {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.08);
+        }
+        .border-gold-glow:hover {
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.18);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0B0F19]/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center font-heading font-bold text-black text-xl shadow-lg">
+                    IG
+                </div>
+                <div>
+                    <span class="font-heading font-bold text-lg text-white block leading-none">David Argueta</span>
+                    <span class="text-xs text-amber-400 font-medium tracking-wider uppercase">Infinite Growth</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-amber-400 transition-colors">Sobre Mí</a>
+                <a href="#services" class="hover:text-amber-400 transition-colors">Servicios</a>
+                <a href="#work" class="hover:text-amber-400 transition-colors">Casos de Estudio</a>
+                <a href="#methodology" class="hover:text-amber-400 transition-colors">Metodología</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-amber-500 hover:bg-amber-400 text-black font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 shadow-md shadow-amber-500/10 flex items-center gap-2">
+                    <span>Agendar Consulta</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white" aria-label="Abrir Menú">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 px-4 pt-4 pb-6 space-y-4">
+            <a href="#about" class="block text-gray-300 hover:text-amber-400 py-2 mobile-link">Sobre Mí</a>
+            <a href="#services" class="block text-gray-300 hover:text-amber-400 py-2 mobile-link">Servicios</a>
+            <a href="#work" class="block text-gray-300 hover:text-amber-400 py-2 mobile-link">Casos de Estudio</a>
+            <a href="#methodology" class="block text-gray-300 hover:text-amber-400 py-2 mobile-link">Metodología</a>
+            <a href="#contact" class="inline-block w-full text-center bg-amber-500 text-black font-semibold py-3 rounded-lg mobile-link">Agendar Consulta</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-36 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <div class="max-w-3xl">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs sm:text-sm font-medium mb-6">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                Estrategia Comercial & Performance Marketing
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                Transformo marcas y negocios mediante <span class="text-gold-gradient">estrategias de crecimiento digital</span> que generan resultados reales.
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-gray-400 text-lg sm:text-xl leading-relaxed mb-8">
+                Soy <strong class="text-white">David Argueta</strong>, fundador de <span class="text-amber-400">Infinite Growth</span>. Ayudo a empresas, clínicas y marcas a escalar sus ventas, optimizar su captación de clientes y consolidar su presencia en el mercado.
+            </p>
+
+            <!-- CTA Group -->
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#work" class="bg-amber-500 hover:bg-amber-400 text-black font-bold px-8 py-4 rounded-xl text-center transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20">
+                    <span>Ver Casos de Estudio</span>
+                    <i data-lucide="folder-open" class="w-5 h-5"></i>
+                </a>
+                <a href="#contact" class="border border-gray-700 hover:border-amber-500/50 text-gray-200 hover:text-white px-8 py-4 rounded-xl font-semibold text-center transition-all bg-gray-900/50 backdrop-blur-sm flex items-center justify-center gap-2">
+                    <span>Agendar una Consulta</span>
+                    <i data-lucide="calendar" class="w-5 h-5 text-amber-400"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 border-t border-gray-800/80 bg-gray-900/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7">
+                    <span class="text-amber-400 font-semibold text-sm uppercase tracking-wider block mb-2">Visión & Ejecución</span>
+                    <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-6">
+                        De la estrategia a la ejecución paso a paso.
+                    </h2>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+                        Con experiencia en estrategia comercial, campañas de rendimiento en Meta Ads, automatización de procesos y desarrollo de marca, mi enfoque no es solo crear contenido visualmente atractivo, sino construir <strong class="text-white">sistemas de ventas rentables y sostenibles</strong>.
+                    </p>
+                    <p class="text-gray-400 text-base sm:text-lg leading-relaxed mb-8">
+                        Trabajo de la mano con cada proyecto para diagnosticar áreas de oportunidad, diseñar embudos de captación efectivos y optimizar la experiencia de conversión de cada cliente.
+                    </p>
+
+                    <!-- Key Pillars / Chips -->
+                    <div class="flex flex-wrap gap-3">
+                        <div class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-sm font-medium text-amber-300 flex items-center gap-2">
+                            <i data-lucide="target" class="w-4 h-4"></i> Meta Ads Performance
+                        </div>
+                        <div class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-sm font-medium text-amber-300 flex items-center gap-2">
+                            <i data-lucide="bot" class="w-4 h-4"></i> Automatizaciones CRM & WhatsApp
+                        </div>
+                        <div class="px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-sm font-medium text-amber-300 flex items-center gap-2">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4"></i> Posicionamiento de Marca
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats / Highlight Card -->
+                <div class="lg:col-span-5">
+                    <div class="p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 shadow-2xl relative overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl"></div>
+                        <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-4">Enfoque Resultados</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <div class="text-3xl font-extrabold text-amber-400 font-heading">+40%</div>
+                                <div class="text-gray-300 font-medium text-sm">Incremento promedio en citas confirmadas</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-extrabold text-amber-400 font-heading">-25%</div>
+                                <div class="text-gray-300 font-medium text-sm">Reducción en el costo de adquisición de leads</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-extrabold text-amber-400 font-heading">&lt; 10 min</div>
+                                <div class="text-gray-300 font-medium text-sm">Tiempo de respuesta automatizada a nuevos prospectos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-amber-400 font-semibold text-sm uppercase tracking-wider block mb-2">Servicios Clave</span>
+            <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">Soluciones Integrales de Crecimiento</h2>
+            <p class="text-gray-400 text-base">Diseñadas para maximizar tus ventas, optimizar recursos e impulsar tu negocio.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="p-8 rounded-2xl bg-gray-900/60 border border-gray-800 border-gold-glow transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">1. Estrategia & Marketing Digital</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Diseño y ejecución de campañas publicitarias en Meta Ads, segmentación avanzada y optimización constante de ROI para maximizar el retorno de inversión en cada anuncio.
+                    </p>
+                </div>
+                <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800 pt-4">
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Campañas Meta Ads (FB / IG)</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Optimización de Conversiones</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Análisis de Audiencia y Métricas</li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="p-8 rounded-2xl bg-gray-900/60 border border-gray-800 border-gold-glow transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6">
+                        <i data-lucide="message-square" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">2. Automatización & CRM (WhatsApp)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Integración de flujos de trabajo con WhatsApp Business y sistemas CRM para automatizar respuestas, reducir tiempos de atención y acelerar el cierre de prospectos.
+                    </p>
+                </div>
+                <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800 pt-4">
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Flujos Automatizados en WhatsApp</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Organización de Embudo CRM</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Trazabilidad de Leads</li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="p-8 rounded-2xl bg-gray-900/60 border border-gray-800 border-gold-glow transition-all duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">3. Identidad de Marca & Posicionamiento</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Desarrollo de identidad de marca, estrategia de contenido comercial y activos visuales orientados a transmitir autoridad, confianza y diferenciación en el sector.
+                    </p>
+                </div>
+                <ul class="space-y-2 text-xs text-gray-300 border-t border-gray-800 pt-4">
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Estrategia de Contenido Comercial</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Manuales de Identidad y Estilo</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400"></i> Creativos publicitarios de alto impacto</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="work" class="py-20 bg-gray-900/40 border-t border-gray-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-amber-400 font-semibold text-sm uppercase tracking-wider block mb-2">Portafolio</span>
+                <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">Casos de Estudio Destacados</h2>
+                <p class="text-gray-400 text-base">Resultados reales construidos con estrategia y optimización continua.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Case 1 Card -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold">Generación de Leads</span>
+                            <span class="text-xs text-gray-500">60 días</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3">Captación de Clientes Potenciales para Servicios Especializados</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Implementación de embudo directo con Meta Ads y atención sistematizada vía WhatsApp para elevar el volumen de citas confirmadas.
+                        </p>
+                        
+                        <!-- Highlight Stats -->
+                        <div class="grid grid-cols-2 gap-4 bg-gray-950 p-4 rounded-xl mb-6">
+                            <div>
+                                <div class="text-amber-400 font-bold text-2xl font-heading">+40%</div>
+                                <div class="text-gray-400 text-xs">Citas Confirmadas</div>
+                            </div>
+                            <div>
+                                <div class="text-amber-400 font-bold text-2xl font-heading">-25%</div>
+                                <div class="text-gray-400 text-xs">Costo por Lead</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-8 pb-8">
+                        <button onclick="openModal('modal-1')" class="w-full bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white font-medium py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 border border-gray-700">
+                            <span>Ver Detalle del Caso</span>
+                            <i data-lucide="eye" class="w-4 h-4 text-amber-400"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Case 2 Card -->
+                <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold">Branding & Conversión</span>
+                            <span class="text-xs text-gray-500">Salud y Bienestar</span>
+                        </div>
+                        <h3 class="font-heading font-bold text-2xl text-white mb-3">Estrategia de Branding y Captación para Salud y Bienestar</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Renovación completa de identidad visual, estrategia de contenidos de autoridad y automatización de agenda de atenciones.
+                        </p>
+                        
+                        <!-- Highlight Stats -->
+                        <div class="grid grid-cols-2 gap-4 bg-gray-950 p-4 rounded-xl mb-6">
+                            <div>
+                                <div class="text-amber-400 font-bold text-2xl font-heading">&lt; 10 min</div>
+                                <div class="text-gray-400 text-xs">Tiempo de Respuesta</div>
+                            </div>
+                            <div>
+                                <div class="text-amber-400 font-bold text-2xl font-heading">100%</div>
+                                <div class="text-gray-400 text-xs">Automatización CRM</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-8 pb-8">
+                        <button onclick="openModal('modal-2')" class="w-full bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white font-medium py-3 rounded-xl transition-all text-sm flex items-center justify-center gap-2 border border-gray-700">
+                            <span>Ver Detalle del Caso</span>
+                            <i data-lucide="eye" class="w-4 h-4 text-amber-400"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-amber-400 font-semibold text-sm uppercase tracking-wider block mb-2">Paso a Paso</span>
+            <h2 class="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">Metodología de Trabajo</h2>
+            <p class="text-gray-400 text-base">Un proceso claro y estructurado para asegurar resultados sostenibles.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 relative">
+            <!-- Step 1 -->
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 relative">
+                <div class="text-4xl font-black text-amber-500/20 font-heading mb-4">01</div>
+                <h3 class="text-xl font-bold text-white mb-3">Diagnóstico & Análisis</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Evaluación profunda de la situación actual del negocio, público objetivo, propuesta de valor y embudo comercial existente para identificar oportunidades inmediatas.
+                </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 relative">
+                <div class="text-4xl font-black text-amber-500/20 font-heading mb-4">02</div>
+                <h3 class="text-xl font-bold text-white mb-3">Estrategia Personalizada</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Diseño del plan de acción a medida: configuración de campañas de anuncios, estructuración de mensajes de oferta e integración de flujos de automatización.
+                </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800 relative">
+                <div class="text-4xl font-black text-amber-500/20 font-heading mb-4">03</div>
+                <h3 class="text-xl font-bold text-white mb-3">Ejecución & Optimización</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Lanzamiento de campañas y sistemas. Monitoreo constante de datos, pruebas A/B de anuncios y ajustes para maximizar el retorno de inversión (ROAS).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer Section -->
+    <footer id="contact" class="py-20 border-t border-gray-800 bg-gray-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="text-amber-400 font-semibold text-sm uppercase tracking-wider block mb-2">Contacto Directo</span>
+                <h2 class="font-heading font-bold text-3xl sm:text-5xl text-white mb-6">
+                    ¿Listo para llevar tu negocio al siguiente nivel?
+                </h2>
+                <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                    Conversemos sobre tu proyecto y diseñemos una estrategia comercial a la medida de tus objetivos.
+                </p>
+
+                <!-- Outreach Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="https://wa.me/?text=Hola%20David,%20me%20interesa%20agendar%20una%20consulta%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-600/20">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span>Escribir por WhatsApp</span>
+                    </a>
+                    
+                    <button onclick="copyEmail('david@infinitegrowth.com')" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white font-semibold px-8 py-4 rounded-xl transition-all border border-gray-700 flex items-center justify-center gap-2">
+                        <i data-lucide="mail" class="w-5 h-5 text-amber-400"></i>
+                        <span id="copy-email-text">Copiar Correo</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom info -->
+            <div class="pt-12 border-t border-gray-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded-md bg-amber-500 flex items-center justify-center font-bold text-black text-xs">IG</div>
+                    <span class="text-gray-300 font-medium">David Argueta - Infinite Growth</span>
+                </div>
+                <div>
+                    📍 San Salvador, El Salvador &bull; Servicios Remotos
+                </div>
+                <div>
+                    &copy; <span id="year"></span> Todos los derechos reservados.
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Modal Case 1 -->
+    <div id="modal-1" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal-1')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold">Caso de Estudio 01</span>
+            <h3 class="font-heading font-bold text-2xl text-white mt-3 mb-4">Captación de Clientes Potenciales para Servicios Especializados</h3>
+            
+            <div class="space-y-6 text-sm text-gray-300">
+                <div>
+                    <h4 class="font-bold text-amber-400 text-base mb-1">1. El Reto (Contexto Inicial)</h4>
+                    <p class="text-gray-400">La marca contaba con tráfico en redes sociales, pero las consultas no se convertían en clientes finales ni citas agendadas debido a la falta de un sistema directo de captación y seguimiento.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-amber-400 text-base mb-1">2. La Solución (Estrategia)</h4>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Diseño de campaña publicitaria en Meta Ads orientada a audiencias de alta intención.</li>
+                        <li>Implementación de un flujo de respuesta rápida vía WhatsApp Business.</li>
+                        <li>Optimización de copies y piezas creativas para transmitir confianza.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-amber-400 text-base mb-1">3. Resultados Clave</h4>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li><strong>+40%</strong> de aumento en citas confirmadas en los primeros 60 días.</li>
+                        <li><strong>-25%</strong> en el costo por lead respecto a esfuerzos anteriores.</li>
+                        <li>Tiempo de atención inicial reducido a menos de 10 minutos.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-4 border-t border-gray-800 flex justify-end">
+                <button onclick="closeModal('modal-1')" class="bg-amber-500 hover:bg-amber-400 text-black font-semibold px-6 py-2 rounded-lg text-sm">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Case 2 -->
+    <div id="modal-2" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal-2')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold">Caso de Estudio 02</span>
+            <h3 class="font-heading font-bold text-2xl text-white mt-3 mb-4">Estrategia de Branding y Captación para Salud y Bienestar</h3>
+            
+            <div class="space-y-6 text-sm text-gray-300">
+                <div>
+                    <h4 class="font-bold text-amber-400 text-base mb-1">1. El Reto (Contexto Inicial)</h4>
+                    <p class="text-gray-400">Necesidad de posicionar la marca con mayor autoridad en su área y automatizar el proceso manual de solicitud de citas para evitar pérdida de oportunidades.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-amber-400 text-base mb-1">2. La Solución (Estrategia)</h4>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Renovación de la línea gráfica y mensajes clave de la marca.</li>
+                        <li>Creación de campañas de contenido educativo y comercial en Meta Ads.</li>
+                        <li>Integración de CRM para gestión de prospectos y recordatorios de citas.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-amber-400 text-base mb-1">3. Resultados Clave</h4>
+                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                        <li>Sistema 100% automatizado para captura y derivación de pacientes.</li>
+                        <li>Mejora sustancial en la tasa de respuesta y percepción de marca.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-gray-800 flex justify-end">
+                <button onclick="closeModal('modal-2')" class="bg-amber-500 hover:bg-amber-400 text-black font-semibold px-6 py-2 rounded-lg text-sm">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modals Functions
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Copy Email to Clipboard
+        function copyEmail(email) {
+            const tempInput = document.createElement('input');
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const btnText = document.getElementById('copy-email-text');
+            const originalText = btnText.textContent;
+            btnText.textContent = '¡Correo Copiado!';
+            setTimeout(() => {
+                btnText.textContent = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
