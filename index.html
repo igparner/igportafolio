@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Argueta | Infinite Growth - Crecimiento Digital & Estrategia</title>
-    <!-- CDN CSS de Tailwind -->
+
+    <!-- ============ LIBRERÍAS EXTERNAS ============ -->
+    <!-- Tailwind CSS (estilos por clases) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Montserrat (Tipografía del Logo) e Inter (Lectura) -->
+    <!-- Google Fonts: Montserrat (logo y títulos) e Inter (lectura) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <!-- CDN de Iconos de Lucide -->
+    <!-- Lucide: librería de iconos -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ============ CONFIGURACIÓN DE TAILWIND ============ -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    // Tipografías del sitio
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         logo: ['Montserrat', 'sans-serif'],
                         heading: ['Montserrat', 'sans-serif'],
                     },
+                    // Paleta de colores: fondo oscuro, tarjetas y dorado
                     colors: {
                         dark: '#0B0F19',
                         card: '#111827',
@@ -34,32 +40,45 @@
             }
         }
     </script>
+
+    <!-- ============ ESTILOS PERSONALIZADOS ============ -->
     <style>
-        /* Degradado metálico Oro Viejo estilo Chip */
+        /* Texto con degradado metálico oro viejo (usado en el logo) */
         .gold-metal-text {
             background: linear-gradient(135deg, #DFBA73 0%, #C5A059 40%, #9E7D3B 70%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* Borde tipo "chip" metalizado para el emblema del logo */
         .gold-chip-border {
             background: linear-gradient(135deg, rgba(223, 186, 115, 0.4) 0%, rgba(158, 125, 59, 0.2) 100%);
             border: 1px solid rgba(212, 175, 55, 0.4);
             box-shadow: inset 0 0 8px rgba(212, 175, 55, 0.15), 0 2px 6px rgba(0, 0, 0, 0.5);
         }
+
+        /* Botón de volumen de los reels: muestra el icono según el estado (silenciado / con sonido) */
+        .reel-sound-btn[data-muted="true"]  .icon-sound { display: none; }
+        .reel-sound-btn[data-muted="false"] .icon-muted { display: none; }
+
+        /* Icono de pausa que aparece al tocar un reel */
+        .reel-card[data-paused="true"] .reel-pause-icon { opacity: 1; }
     </style>
 </head>
+
 <body class="bg-dark text-gray-100 font-sans antialiased selection:bg-gold-500 selection:text-dark">
 
-    <!-- HEADER / NAVEGACIÓN -->
+    <!-- =====================================================
+         HEADER / NAVEGACIÓN
+         ===================================================== -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-4">
-            
-            <!-- BRAND LOGO TIPO CHIP METALIZADO ORO VIEJO + SÍMBOLO COHETE/INFINITO -->
+
+            <!-- Logo: emblema cohete/infinito + texto -->
             <a href="#" class="flex items-center gap-2.5 group shrink-0">
-                
-                <!-- EMBLEMA / CHIP EN ORO VIEJO -->
+
+                <!-- Emblema en oro viejo -->
                 <div class="w-8 h-8 md:w-9 md:h-9 rounded-lg gold-chip-border flex items-center justify-center p-1.5 transition-transform group-hover:scale-105">
-                    <!-- Icono SVG Cohete/Infinito en Oro Viejo -->
                     <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-md">
                         <defs>
                             <linearGradient id="oldGold" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -72,18 +91,18 @@
                                 <stop offset="100%" stop-color="#1A252F" />
                             </linearGradient>
                         </defs>
-                        <!-- Bucle de Infinito Metalizado -->
-                        <path d="M 30,65 C 15,65 15,35 30,35 C 45,35 55,65 70,65 C 85,65 85,35 70,35 C 60,35 50,50 42,60" 
+                        <!-- Bucle de infinito (sombra azul + capa dorada) -->
+                        <path d="M 30,65 C 15,65 15,35 30,35 C 45,35 55,65 70,65 C 85,65 85,35 70,35 C 60,35 50,50 42,60"
                               fill="none" stroke="url(#nightBlue)" stroke-width="8" stroke-linecap="round"/>
-                        <path d="M 30,65 C 15,65 15,35 30,35 C 45,35 55,65 70,65 C 85,65 85,35 70,35" 
+                        <path d="M 30,65 C 15,65 15,35 30,35 C 45,35 55,65 70,65 C 85,65 85,35 70,35"
                               fill="none" stroke="url(#oldGold)" stroke-width="5" stroke-linecap="round"/>
-                        <!-- Estela y Cohete -->
+                        <!-- Estela y punta del cohete -->
                         <path d="M 50,55 C 50,30 60,20 70,15" fill="none" stroke="url(#oldGold)" stroke-width="4"/>
                         <polygon points="70,10 77,22 67,20" fill="url(#oldGold)"/>
                     </svg>
                 </div>
 
-                <!-- TEXTO DEL LOGO CON SUBTEXTO "DAVID ARGUETA" EN BLANCO -->
+                <!-- Texto del logo -->
                 <div class="flex flex-col">
                     <span class="text-base md:text-lg font-black font-logo tracking-wider uppercase leading-none">
                         <span class="text-white">INFINITE</span><span class="gold-metal-text">GROWTH</span>
@@ -93,8 +112,8 @@
                     </span>
                 </div>
             </a>
-            
-            <!-- MENÚ ORDENADO Y COMPACTO -->
+
+            <!-- Menú de escritorio -->
             <nav class="hidden lg:flex items-center gap-4 text-xs xl:text-sm font-medium text-gray-300">
                 <a href="#inicio" class="hover:text-gold-400 transition-colors whitespace-nowrap">Inicio</a>
                 <a href="#sobre-mi" class="hover:text-gold-400 transition-colors whitespace-nowrap">Sobre Mí</a>
@@ -106,19 +125,20 @@
                 <a href="#redes-sociales" class="hover:text-gold-400 transition-colors whitespace-nowrap">Redes</a>
             </nav>
 
+            <!-- Botón de WhatsApp (escritorio) -->
             <div class="hidden md:flex shrink-0">
                 <a href="https://wa.me/50379213564" target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-4 py-2 rounded-lg text-xs md:text-sm transition-all shadow-md shadow-emerald-900/20 flex items-center gap-1.5">
                     <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
                 </a>
             </div>
 
-            <!-- Botón Menú Móvil -->
-            <button id="menu-btn" class="lg:hidden text-gray-300 hover:text-white p-1">
+            <!-- Botón de menú móvil -->
+            <button id="menu-btn" class="lg:hidden text-gray-300 hover:text-white p-1" aria-label="Abrir menú">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
 
-        <!-- Menú Móvil Desplegable -->
+        <!-- Menú móvil desplegable -->
         <div id="mobile-menu" class="hidden lg:hidden bg-card border-b border-gray-800 px-6 py-4 space-y-3">
             <a href="#inicio" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Inicio</a>
             <a href="#sobre-mi" class="block text-gray-300 hover:text-gold-400 py-1 text-sm">Sobre Mí</a>
@@ -132,7 +152,9 @@
         </div>
     </header>
 
-    <!-- 1. ENCABEZADO / HERO SECTION -->
+    <!-- =====================================================
+         1. HERO / ENCABEZADO
+         ===================================================== -->
     <section id="inicio" class="pt-28 pb-20 md:pt-40 md:pb-32 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-gold-400 text-xs font-semibold tracking-wide uppercase">
@@ -153,13 +175,13 @@
                 </a>
             </div>
         </div>
-        
-        <!-- CONTENEDOR DEL GIF PRINCIPAL (Hero) -->
+
+        <!-- Imagen principal del hero -->
         <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-gold-500 to-amber-600 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
             <div class="relative bg-card rounded-2xl overflow-hidden border border-gray-800 shadow-2xl aspect-[4/3]">
-                <img src="https://i.ibb.co/6RTG02b4/IMG-20261014-WA0044.jpg" 
-                     alt="Estrategia y Crecimiento Digital" 
+                <img src="https://i.ibb.co/6RTG02b4/IMG-20261014-WA0044.jpg"
+                     alt="Estrategia y Crecimiento Digital"
                      class="w-full h-full object-cover transform hover:scale-105 transition duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent flex items-end p-6">
                     <span class="text-xs bg-dark/90 text-gold-400 px-3 py-1 rounded-lg border border-gold-500/30 font-mono">
@@ -170,7 +192,9 @@
         </div>
     </section>
 
-    <!-- 2. SOBRE MÍ -->
+    <!-- =====================================================
+         2. SOBRE MÍ
+         ===================================================== -->
     <section id="sobre-mi" class="py-20 bg-card/50 border-y border-gray-800/60 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
@@ -182,6 +206,7 @@
                 <p class="text-gray-400">
                     Trabajo de la mano con cada cliente para diagnosticar cuellos de botella, diseñar embudos de captación efectivos y optimizar la conversión de prospectos a compradores recurrentes.
                 </p>
+                <!-- Indicadores destacados -->
                 <div class="grid grid-cols-2 gap-4 pt-4">
                     <div class="bg-card p-4 rounded-xl border border-gray-800">
                         <span class="block text-3xl font-extrabold text-gold-400 font-heading">+40%</span>
@@ -194,18 +219,20 @@
                 </div>
             </div>
 
-            <!-- IMAGEN SECCIÓN SOBRE MÍ -->
+            <!-- Imagen de la sección -->
             <div class="relative">
                 <div class="rounded-2xl overflow-hidden border border-gray-800 shadow-2xl aspect-[4/5]">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" 
-                         alt="David Argueta - Consultor" 
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80"
+                         alt="David Argueta - Consultor" loading="lazy"
                          class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. SERVICIOS PRINCIPALES -->
+    <!-- =====================================================
+         3. SERVICIOS PRINCIPALES
+         ===================================================== -->
     <section id="servicios" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
             <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Lo que hago</span>
@@ -214,10 +241,10 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Servicio 1 -->
+            <!-- Servicio 1: Estrategia & Marketing Digital -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-48 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Estrategia y Marketing" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Estrategia y Marketing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="target" class="w-6 h-6"></i>
                     </div>
@@ -231,10 +258,10 @@
                 </div>
             </div>
 
-            <!-- Servicio 2 -->
+            <!-- Servicio 2: Automatización & CRM -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-48 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Automatización y CRM" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Automatización y CRM" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="cpu" class="w-6 h-6"></i>
                     </div>
@@ -248,10 +275,10 @@
                 </div>
             </div>
 
-            <!-- Servicio 3 -->
+            <!-- Servicio 3: Identidad & Posicionamiento -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-48 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=600&q=80" alt="Identidad de Marca" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&w=600&q=80" alt="Identidad de Marca" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="pen-tool" class="w-6 h-6"></i>
                     </div>
@@ -267,63 +294,59 @@
         </div>
     </section>
 
-    <!-- 4. APARTADO DE CREACIÓN DE CONTENIDO (HISTORIAS & REELS) -->
+    <!-- =====================================================
+         4. CREACIÓN DE CONTENIDO (HISTORIAS & REELS)
+         ===================================================== -->
     <section id="contenido" class="py-24 bg-card/50 border-y border-gray-800/60 px-6">
         <div class="max-w-7xl mx-auto space-y-16">
+
+            <!-- Encabezado de la sección -->
             <div class="text-center max-w-2xl mx-auto space-y-4">
                 <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Producción Audiovisual</span>
                 <h2 class="text-3xl md:text-4xl font-bold font-heading">Creación de Contenido de Alto Impacto</h2>
                 <p class="text-gray-400">Formatos optimizados para retener la atención, generar interacción y convertir audiencia en clientes.</p>
             </div>
 
-<!-- 4. APARTADO DE CREACIÓN DE CONTENIDO (HISTORIAS & REELS) -->
-<section id="contenido" class="py-24 bg-card/50 border-y border-gray-800/60 px-6">
-    <div class="max-w-7xl mx-auto space-y-16">
-        <div class="text-center max-w-2xl mx-auto space-y-4">
-            <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Producción Audiovisual</span>
-            <h2 class="text-3xl md:text-4xl font-bold font-heading">Creación de Contenido de Alto Impacto</h2>
-            <p class="text-gray-400">Formatos optimizados para retener la atención, generar interacción y convertir audiencia en clientes.</p>
-        </div>
-
-	
-            <!-- SUB-APARTADO 1: CREACIÓN DE HISTORIAS -->
-             <div class="space-y-6">
+            <!-- ---------- SUB-APARTADO 1: HISTORIAS (9:16) ---------- -->
+            <div class="space-y-6">
                 <div class="flex items-center gap-3">
                     <div class="p-2 rounded-lg bg-gold-500/10 text-gold-400">
                         <i data-lucide="layout-grid" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-2xl font-bold font-heading">Creación de Historias (Stories 9:16)</h3>
                 </div>
-                
+
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Historia 1: Interacción & Oferta -->
                     <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16]">
-						
-                        <img src="historia_interaccion_oferta_negro.png" alt="Historia Interactiva" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-						
+                        <img src="historia_interaccion_oferta_negro.png" alt="Historia Interactiva" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex flex-col justify-end p-4">
                             <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Interacción & Oferta</span>
                             <p class="text-xs text-gray-300 mt-1">Secuencias narrativas con stickers y llamadas a la acción directas.</p>
                         </div>
                     </div>
 
+                    <!-- Historia 2: Promoción Flash -->
                     <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16]">
-                        <img src="Historia%20de%20Instagram%20Descuentos%20de%20Carnaval%20Festivo%20Verde%20y%20Lila.png" alt="Historia Promocional" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="Historia%20de%20Instagram%20Descuentos%20de%20Carnaval%20Festivo%20Verde%20y%20Lila.png" alt="Historia Promocional" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex flex-col justify-end p-4">
                             <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Promoción Flash</span>
                             <p class="text-xs text-gray-300 mt-1">Diseño dinámico para campañas diarias e imperdibles.</p>
                         </div>
                     </div>
 
+                    <!-- Historia 3: Detrás de Escena -->
                     <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16]">
-                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80" alt="Historia Corporativa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80" alt="Historia Corporativa" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex flex-col justify-end p-4">
                             <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Detrás de Escena</span>
                             <p class="text-xs text-gray-300 mt-1">Humanización de marca y procesos de servicio.</p>
                         </div>
                     </div>
 
+                    <!-- Historia 4: Testimonios & Casos -->
                     <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16]">
-                        <img src="historia_instagram_infinite_growth_perfil.png" alt="Historia de Resultados" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="historia_instagram_infinite_growth_perfil.png" alt="Historia de Resultados" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-transparent to-transparent flex flex-col justify-end p-4">
                             <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Testimonios & Casos</span>
                             <p class="text-xs text-gray-300 mt-1">Prueba social enfocada en generar confianza inmediata.</p>
@@ -332,8 +355,15 @@
                 </div>
             </div>
 
-            <!-- SUB-APARTADO 2: CREACIÓN DE REELS & Aqui va los videos VIDEOS CORTOS 
-              <div class="space-y-6 pt-6">
+            <!-- ---------- SUB-APARTADO 2: REELS (VIDEOS CORTOS) ----------
+                 Cada reel se reproduce dentro de su propia tarjeta, estilo Instagram:
+                   - Se reproduce solo cuando la tarjeta está visible en pantalla.
+                   - Inicia en silencio (requisito de los navegadores para autoplay).
+                   - Botón de volumen (arriba a la derecha) para activar/desactivar el sonido.
+                   - Tocar la tarjeta pausa o reanuda el video.
+                 Para agregar un reel nuevo, copia un bloque completo (INICIO...FIN)
+                 y cambia el archivo del video, la etiqueta y los textos. -->
+            <div class="space-y-6 pt-6">
                 <div class="flex items-center gap-3">
                     <div class="p-2 rounded-lg bg-gold-500/10 text-gold-400">
                         <i data-lucide="video" class="w-6 h-6"></i>
@@ -342,131 +372,89 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80" alt="Reel Educativo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
-                        
-                        <div class="relative z-10 flex justify-between items-center">
-                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Reel Educativo</span>
-                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
-                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+
+                    <!-- ===== INICIO DE CÓDIGO DE VIDEO 1: Reel Educativo ===== -->
+                    <div class="reel-card bg-dark rounded-2xl overflow-hidden border border-gray-800 relative aspect-[9/16] cursor-pointer select-none">
+                        <!-- Video: cubre toda la tarjeta; sin controles nativos, en bucle y en línea (móvil) -->
+                        <video src="14%20de%20octubre%20de%202026.mp4" class="reel-video absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
+                        <!-- Degradado para dar legibilidad al texto -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40 pointer-events-none"></div>
+                        <!-- Icono de pausa (visible solo cuando el usuario pausa el video) -->
+                        <div class="reel-pause-icon absolute inset-0 flex items-center justify-center opacity-0 transition-opacity pointer-events-none">
+                            <div class="w-16 h-16 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
+                                <i data-lucide="play" class="w-7 h-7 fill-current"></i>
                             </div>
                         </div>
-
-
-                        <div class="relative z-10 space-y-2">
+                        <!-- Barra superior: etiqueta + botón de volumen -->
+                        <div class="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-10">
+                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Reel Educativo</span>
+                            <button type="button" class="reel-sound-btn w-9 h-9 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white hover:bg-dark/80 transition" data-muted="true" aria-label="Activar sonido">
+                                <i data-lucide="volume-x" class="icon-muted w-4 h-4"></i>
+                                <i data-lucide="volume-2" class="icon-sound w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <!-- Textos inferiores -->
+                        <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2 z-10 pointer-events-none">
                             <h4 class="font-bold text-lg text-white font-heading">Estrategia de Gancho Corto</h4>
                             <p class="text-xs text-gray-300">Guiones enfocados en retener los primeros 3 segundos y elevar la tasa de reproducción.</p>
                         </div>
                     </div>
+                    <!-- ===== FIN DE CÓDIGO DE VIDEO 1 ===== -->
 
-                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
-                        <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80" alt="Reel Comercial" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
-                        
-                        <div class="relative z-10 flex justify-between items-center">
-                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Reel de Venta</span>
-                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
-                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                    <!-- ===== INICIO DE CÓDIGO DE VIDEO 2: Reel de Venta ===== -->
+                    <div class="reel-card bg-dark rounded-2xl overflow-hidden border border-gray-800 relative aspect-[9/16] cursor-pointer select-none">
+                        <video src="videoplayback.mp4" class="reel-video absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40 pointer-events-none"></div>
+                        <div class="reel-pause-icon absolute inset-0 flex items-center justify-center opacity-0 transition-opacity pointer-events-none">
+                            <div class="w-16 h-16 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
+                                <i data-lucide="play" class="w-7 h-7 fill-current"></i>
                             </div>
                         </div>
-
-                        <div class="relative z-10 space-y-2">
+                        <div class="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-10">
+                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Reel de Venta</span>
+                            <button type="button" class="reel-sound-btn w-9 h-9 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white hover:bg-dark/80 transition" data-muted="true" aria-label="Activar sonido">
+                                <i data-lucide="volume-x" class="icon-muted w-4 h-4"></i>
+                                <i data-lucide="volume-2" class="icon-sound w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2 z-10 pointer-events-none">
                             <h4 class="font-bold text-lg text-white font-heading">Presentación de Oferta</h4>
                             <p class="text-xs text-gray-300">Demostración directa de beneficios, llamado a la acción claro y edición ágil.</p>
                         </div>
                     </div>
+                    <!-- ===== FIN DE CÓDIGO DE VIDEO 2 ===== -->
 
-                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Reel de Tendencia" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
-                        
-                        <div class="relative z-10 flex justify-between items-center">
-                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Tendencias & Virales</span>
-                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
-                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                    <!-- ===== INICIO DE CÓDIGO DE VIDEO 3: Tendencias & Virales ===== -->
+                    <div class="reel-card bg-dark rounded-2xl overflow-hidden border border-gray-800 relative aspect-[9/16] cursor-pointer select-none">
+                        <video src="videoplayback%20(2).mp4" class="reel-video absolute inset-0 w-full h-full object-cover" muted loop playsinline preload="metadata"></video>
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40 pointer-events-none"></div>
+                        <div class="reel-pause-icon absolute inset-0 flex items-center justify-center opacity-0 transition-opacity pointer-events-none">
+                            <div class="w-16 h-16 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
+                                <i data-lucide="play" class="w-7 h-7 fill-current"></i>
                             </div>
                         </div>
-
-                        <div class="relative z-10 space-y-2">
+                        <div class="absolute top-0 left-0 right-0 p-6 flex justify-between items-center z-10">
+                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Tendencias & Virales</span>
+                            <button type="button" class="reel-sound-btn w-9 h-9 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white hover:bg-dark/80 transition" data-muted="true" aria-label="Activar sonido">
+                                <i data-lucide="volume-x" class="icon-muted w-4 h-4"></i>
+                                <i data-lucide="volume-2" class="icon-sound w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 space-y-2 z-10 pointer-events-none">
                             <h4 class="font-bold text-lg text-white font-heading">Audio & Formato Viral</h4>
                             <p class="text-xs text-gray-300">Adaptación de contenidos en tendencia aplicados al nicho específico de tu marca.</p>
                         </div>
                     </div>
-                </div>
-            </div>-->
-			-->
-			<div class="space-y-6 pt-6">
-                <div class="flex items-center gap-3">
-                    <div class="p-2 rounded-lg bg-gold-500/10 text-gold-400">
-                        <i data-lucide="video" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold font-heading">Creación de Reels & Contenido Dinámico</h3>
-                </div>
+                    <!-- ===== FIN DE CÓDIGO DE VIDEO 3 ===== -->
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
-                        <video src="14%20de%20octubre%20de%202026.mp4" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" autoplay muted loop playsinline></video>
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
-                        
-                        <div class="relative z-10 flex justify-between items-center">
-                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Reel Educativo</span>
-                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
-                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
-                            </div>
-                        </div>
-
-
-                        <div class="relative z-10 space-y-2">
-                            <h4 class="font-bold text-lg text-white font-heading">Estrategia de Gancho Corto</h4>
-                            <p class="text-xs text-gray-300">Guiones enfocados en retener los primeros 3 segundos y elevar la tasa de reproducción.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
-                        <video src="videoplayback.mp4" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" autoplay muted loop playsinline></video>
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
-                        
-                        <div class="relative z-10 flex justify-between items-center">
-                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Reel de Venta</span>
-                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
-                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
-                            </div>
-                        </div>
-
-                        <div class="relative z-10 space-y-2">
-                            <h4 class="font-bold text-lg text-white font-heading">Presentación de Oferta</h4>
-                            <p class="text-xs text-gray-300">Demostración directa de beneficios, llamado a la acción claro y edición ágil.</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 group relative aspect-[9/16] flex flex-col justify-between p-6">
-                        <video src="videoplayback%20(2).mp4" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" autoplay muted loop playsinline></video>
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-black/40"></div>
-                        
-                        <div class="relative z-10 flex justify-between items-center">
-                            <span class="bg-gold-500 text-dark text-xs font-extrabold px-3 py-1 rounded-full uppercase">Tendencias & Virales</span>
-                            <div class="w-8 h-8 rounded-full bg-dark/60 backdrop-blur-md flex items-center justify-center text-white">
-                                <i data-lucide="play" class="w-4 h-4 fill-current"></i>
-                            </div>
-                        </div>
-                        <div class="relative z-10 space-y-2">
-                            <h4 class="font-bold text-lg text-white font-heading">Audio & Formato Viral</h4>
-                            <p class="text-xs text-gray-300">Adaptación de contenidos en tendencia aplicados al nicho específico de tu marca.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
-
-			
-			
-			
-			
-			
         </div>
     </section>
 
-    <!-- 5. AUTOMATIZACIÓN Y PROCESOS CON IA -->
+    <!-- =====================================================
+         5. AUTOMATIZACIÓN Y PROCESOS CON IA
+         ===================================================== -->
     <section id="automatizacion" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Eficiencia & Escalabilidad</span>
@@ -475,9 +463,10 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Procesos automatizados -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-56 overflow-hidden relative">
-                    <img src="Imagen%20para%20la%20web%402x%20(1).png" alt="Creación de Procesos con IA" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="Imagen%20para%20la%20web%402x%20(1).png" alt="Creación de Procesos con IA" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="bot" class="w-6 h-6"></i>
                     </div>
@@ -491,9 +480,10 @@
                 </div>
             </div>
 
+            <!-- Planillas de pago -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-56 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Planillas de Pago y Finanzas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Planillas de Pago y Finanzas" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
                     </div>
@@ -507,9 +497,10 @@
                 </div>
             </div>
 
+            <!-- KPIs -->
             <div class="bg-card rounded-2xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col group">
                 <div class="h-56 overflow-hidden relative">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Medición de KPIs de Ventas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Medición de KPIs de Ventas" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute top-4 left-4 bg-dark/80 backdrop-blur-md p-2.5 rounded-xl border border-gray-700 text-gold-400">
                         <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
                     </div>
@@ -525,7 +516,9 @@
         </div>
     </section>
 
-    <!-- 6. CASOS DE ESTUDIO -->
+    <!-- =====================================================
+         6. CASOS DE ESTUDIO
+         ===================================================== -->
     <section id="proyectos" class="py-20 bg-card/50 border-y border-gray-800/60 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -537,12 +530,11 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Caso 1 -->
                 <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 flex flex-col group">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80" alt="Caso de Estudio 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-4 right-4 bg-gold-500 text-dark text-xs font-bold px-3 py-1.5 rounded-lg">
-                            +40% Citas
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80" alt="Caso de Estudio 1" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-gold-500 text-dark text-xs font-bold px-3 py-1.5 rounded-lg">+40% Citas</div>
                     </div>
                     <div class="p-8 space-y-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -559,12 +551,11 @@
                     </div>
                 </div>
 
+                <!-- Caso 2 -->
                 <div class="bg-dark rounded-2xl overflow-hidden border border-gray-800 flex flex-col group">
                     <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Caso de Estudio 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute top-4 right-4 bg-gold-500 text-dark text-xs font-bold px-3 py-1.5 rounded-lg">
-                            Branding & Ventas
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Caso de Estudio 2" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-gold-500 text-dark text-xs font-bold px-3 py-1.5 rounded-lg">Branding & Ventas</div>
                     </div>
                     <div class="p-8 space-y-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -584,7 +575,9 @@
         </div>
     </section>
 
-    <!-- 7. METODOLOGÍA -->
+    <!-- =====================================================
+         7. METODOLOGÍA
+         ===================================================== -->
     <section id="metodologia" class="py-24 bg-card/30 border-y border-gray-800 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-2xl mx-auto space-y-4 mb-16">
@@ -613,7 +606,9 @@
         </div>
     </section>
 
-    <!-- 8. REDES SOCIALES -->
+    <!-- =====================================================
+         8. REDES SOCIALES
+         ===================================================== -->
     <section id="redes-sociales" class="py-20 px-6 max-w-7xl mx-auto">
         <div class="text-center space-y-12">
             <div class="space-y-4">
@@ -658,13 +653,15 @@
         </div>
     </section>
 
-    <!-- 9. CONTACTO / FOOTER -->
+    <!-- =====================================================
+         9. CONTACTO / FOOTER
+         ===================================================== -->
     <section id="contacto" class="py-24 bg-card border-t border-gray-800 px-6">
         <div class="max-w-4xl mx-auto text-center space-y-8">
             <span class="text-gold-400 text-sm font-semibold tracking-wider uppercase">Hablemos de negocios</span>
             <h2 class="text-3xl md:text-5xl font-extrabold font-heading">¿Listo para llevar tu negocio al siguiente nivel?</h2>
             <p class="text-gray-400 max-w-xl mx-auto">Conversemos sobre tus metas actuales y cómo podemos diseñar una estrategia orientada a resultados rentables.</p>
-            
+
             <div class="flex flex-wrap justify-center gap-4 pt-4">
                 <a href="https://wa.me/50379213564" target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center gap-2">
                     <i data-lucide="message-circle" class="w-5 h-5"></i> Contactar por WhatsApp
@@ -681,16 +678,79 @@
         </div>
     </section>
 
-    <!-- Script para iconos Lucide y Menú Móvil -->
+    <!-- =====================================================
+         SCRIPTS
+         ===================================================== -->
     <script>
+        // ---------- 1. Iconos Lucide ----------
+        // Convierte cada <i data-lucide="..."> en un icono SVG.
         lucide.createIcons();
 
+        // ---------- 2. Menú móvil ----------
+        // Muestra u oculta el menú desplegable al tocar el botón de hamburguesa.
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // ---------- 3. Reels (videos tipo Instagram) ----------
+        const reelCards = document.querySelectorAll('.reel-card');
+
+        // Activa o desactiva el sonido de un reel y actualiza su botón/icono.
+        function setMuted(card, muted) {
+            const video = card.querySelector('.reel-video');
+            const btn = card.querySelector('.reel-sound-btn');
+            video.muted = muted;
+            btn.dataset.muted = String(muted);
+            btn.setAttribute('aria-label', muted ? 'Activar sonido' : 'Silenciar');
+        }
+
+        // Reproduce un video (ignora el error si el navegador lo bloquea).
+        function playReel(card) {
+            card.querySelector('.reel-video').play().catch(() => {});
+        }
+
+        reelCards.forEach((card) => {
+            const video = card.querySelector('.reel-video');
+            const soundBtn = card.querySelector('.reel-sound-btn');
+
+            // Botón de volumen: alterna el sonido de ESTE reel.
+            // Al activar el sonido, se silencian los demás reels (solo suena uno a la vez).
+            soundBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el clic pause el video
+                const willUnmute = video.muted;
+                reelCards.forEach((other) => setMuted(other, true));
+                setMuted(card, !willUnmute);
+            });
+
+            // Tocar la tarjeta: pausa o reanuda el reel.
+            card.addEventListener('click', () => {
+                if (video.paused) {
+                    card.dataset.paused = 'false';
+                    playReel(card);
+                } else {
+                    card.dataset.paused = 'true';
+                    video.pause();
+                }
+            });
         });
+
+        // Reproducción automática solo cuando el reel está visible (≥60% en pantalla).
+        // Al salir de pantalla se pausa y se silencia, para ahorrar datos y evitar sonido de fondo.
+        const reelObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const card = entry.target;
+                const video = card.querySelector('.reel-video');
+                if (entry.isIntersecting) {
+                    // Respeta la pausa manual del usuario
+                    if (card.dataset.paused !== 'true') playReel(card);
+                } else {
+                    video.pause();
+                    setMuted(card, true);
+                }
+            });
+        }, { threshold: 0.6 });
+
+        reelCards.forEach((card) => reelObserver.observe(card));
     </script>
 </body>
 </html>
