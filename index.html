@@ -752,5 +752,35 @@
 
         reelCards.forEach((card) => reelObserver.observe(card));
     </script>
+
+<!-- ===== CONTADOR DE VISITAS ===== -->
+<div style="text-align:center;padding:16px 10px;font-family:Arial,sans-serif;">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+  <span style="font-size:14px;color:#777;margin-left:6px;">Visitas:</span>
+  <span id="contador-visitas" style="font-weight:bold;font-size:18px;margin-left:4px;">0</span>
+</div>
+
+<script>
+(function () {
+  // CAMBIA ESTE NOMBRE por uno único para tu sitio (sin espacios ni tildes)
+  var NAMESPACE = "mi-sitio-david-2026";
+  var CLAVE = "visitas";
+
+  var base = "https://api.counterapi.dev/v1/" + NAMESPACE + "/" + CLAVE;
+  var yaContado = sessionStorage.getItem("visita_contada");
+  var el = document.getElementById("contador-visitas");
+
+  fetch(yaContado ? base : base + "/up")
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      el.textContent = d.count || 0;
+      sessionStorage.setItem("visita_contada", "1");
+    })
+    .catch(function () {});
+})();
+</script>
+<!-- ===== FIN CONTADOR ===== -->
+    
+    
 </body>
 </html>
